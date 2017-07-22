@@ -39,9 +39,15 @@ res.render ('about.hbs', {
 app.get ('/bad', (req,res) => {
   res.send ( {
     errorMessage: "Unbable to fetch request"
-  })
-})
+  });
+});
+
+app.get ('/projects', (req, res) => {
+  res.render ( 'projects.hbs', {
+    pageTitle: 'Projects'
+  });
+});
 
 app.listen (port, () => {
-  console.log ('Server is up in port 3000');
+  console.log (`Server is up in port ${port}`);
 });
